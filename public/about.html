@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster+Two:700italic' rel='stylesheet' type='text/css'>
+  <!----  <link href="../css/aboutus.css" rel='stylesheet' type='text/css' />-->
+  <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster+Two:700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-4 pb-4">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto">
+
+        <li class="nav-item" style="margin-right: 50px;">
+          <a class="nav-link" href="index.html"><span id="change1">Home</span></a>
+        </li>
+        <li class="nav-item" style="margin-right:50px">
+          <a class="nav-link" href="about.html"><span id="change1">About Us</span> </a>
+        </li>
+        <div class="navbar-brand ml-4"><span id="change">WEDDING BELLS</span></div>
+        <li class="nav-item" style="margin-left:50px">
+          <a class="nav-link" href="service.html"><span id="change1">Services</span></a>
+        </li>
+        <li class="nav-item" style="margin-left:50px">
+
+          <!-- Button trigger modal -->
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#mobileNumberModal"><span id="change1">Vendor
+              login</span></a>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="mobileNumberModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <centre>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Enter your Number</h5>
+                  </centre>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form method="post" id="validateForm" onsubmit="return validateMobileNumber()">
+                    <input type="tel" id="mobile" placeholder="Mobile Number" class="mt-4 mb-4 form-control "
+                      pattern="[789][0-9]{9}" required>
+                    <input type="submit" id="submitbtn" name="submitBtn" value="Get Started" class="btn btn-info">
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="otpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <centre>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Please Enter Otp</h5>
+                  </centre>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form method="post" id="verifyOtp" onsubmit="return validateOtp()">
+                    <input type="text" id='otp' placeholder="Enter OTP" class="mt-4 mb-4 form-control " />
+                    <center><a href="profile.html"><input type="submit" value="Verify" class="btn btn-info"></a>
+                    </center>
+                    <div class="lastTxt" id="exampleModalLongTitle">Not received code?<a href="#"
+                        onclick="validateMobileNumber(true)"> resend code </a>
+                    </div>
+                    </centre><br>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+  <div class="container">
+
+    <center>
+      <div class="heading">
+        About Us
+      </div>
+    </center>
+    <div class="text">
+      FAICCO'S resturant was open by award winning chef Luciano Canova to offer residance n visitors of southern
+      Brooklyn with the authentic italian cuisine that the FAICCO'S name has become synonymos with after the succes of
+      FAICCO'S resturant in Las Vegas.The resturant now has a loyal following of its own offering roman traditional
+      recipies. write somthin about your company .blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa blaaaaaaaaaaaaaa
+    </div>
+  </div>
+
+
+
+  <div class="row col-md-12 justify-content-center">
+
+    <div class="col-md-3 col-lg-3 col-sm-9 mb-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/user.png" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text " id="alignUser">Aditi</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-md-3 col-lg-3 col-sm-9 mb-4 ">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/user.png" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text" id="alignUser">Nikita</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-md-3 col-lg-3 col-sm-9 mb-4 ">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/user.png" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text" id="alignUser">Vibhuti</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+
+  <footer id="myFooter" style="background:black;color:white mx-auto">
+    <div class="container">
+      <div class="row mx-auto">
+        <div class="col-sm-3">
+          <h2 class="logo"><a href="#"> Wedding Bliss </a></h2>
+        </div>
+        <div class="col-sm-6">
+          <form onsubmit="return submitFeedback()">
+
+            <div class="row">
+              <div class="col-md-6" style="text-align: center">
+                <label for="name" style="width: 80%; text-align: left">Your Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email" style="width: 80%; text-align: left; margin-top: 15px">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="col-md-6" style="text-align: center">
+                <p style="margin: auto; width: 80%; text-align: left; margin-bottom: 15px">Message</p>
+                <textarea id="message" name="message" type="text" placeholder="Write something.." style="height:100px"
+                  required></textarea>
+              </div>
+            </div>
+
+            <input type="submit" value="Submit" style="margin: 5% 20%; width: 60%;">
+          </form>
+        </div>
+        <div class="col-sm-3">
+          <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="container_feedbacks">
+    <!-- data will come here -->
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

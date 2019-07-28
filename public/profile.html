@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<link href="styles/style.css" rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lobster+Two:700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row vendors-container" style="border: none;">
+			<img src="../images/profile3.png" class="profile">
+			<b>
+
+				<div id="container_vendor_name">
+					<!--vendor name-->
+				</div>
+		</div>
+		<div class="col-md-6 info-container">
+			<b>
+				<div class="header">
+					Profile Information
+					<input type="button" id="editInformation" class="header-button" value="Edit" onclick="openEdit()">
+
+				</div><b>
+					<div id="container_information">
+						<!--vendor information-->
+					</div>
+
+		</div>
+		<div class="col-md-6 info-container">
+			<div id="container_services" class="row secondMenuPanel justify-content-center">
+				<!-- services will load here -->
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade profile-modal" id="editModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-body">
+				<form action="profile.html" method="post">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<fieldset>
+							<legend><span class="number">1</span>Your basic info</legend>
+							<label for="name">Name:</label>
+							<input type="text" id="name" value ="" name="user_name">
+	
+							<label for="mail">Email:</label>
+							<input type="email" id="email"value=""  name="user_email">
+	
+							<label for="address">Address:</label>
+							<input type="address" id="address" value="" name="user_address">
+							<br>
+							<input type="button" value="Save" onclick="saveInformation()" class="header-button">
+							<legend><span class="number">2</span>Your Services</legend>
+							<br>
+							<div id="container_edit_services">
+								<!--services in edit form-->
+							</div>
+	
+	
+						</fieldset>
+				</form>
+			</div>
+
+
+		</div>
+
+	</div>
+	<script src="scripts/main.js"></script>
+	<script>
+
+		var vendor;
+
+		function openEdit() {
+			$('#editModal').modal('toggle');
+
+			$('#name').val(vendor.name);
+			$('#email').val(vendor.email);
+			$('#address').val(vendor.address);
+
+			const container = $('#container_edit_services');
+			request('GET', '/services', {}).then((services) => {
+				if (services) {
+					var placeholder = "";
+					for (i in services) {
+						var checked = vendor.services.find(service => services[i].id == service.id) ? "checked" : "";
+						var row = `<input class="servicesCheckbox" type="checkbox" value="${services[i].id}" ${checked}>${services[i].name.toUpperCase()}<br>`;
+						placeholder += row;
+					}
+					container.html(placeholder);
+					$('.servicesCheckbox').on('change', function () {
+						var id = this.value;
+						var method = "POST";
+						if (!this.checked) {
+							method = "DELETE";
+						}
+						request(method, '/vendorservice?serviceId=' + id + "&vendorId=" + vendor.id, {
+						}).then((service) => {
+							if (service) {
+								if (method == "DELETE") {
+									var updatedServiceIndex = vendor.services.findIndex(service => service.id == id);
+									vendor.services.splice(updatedServiceIndex, 1);
+								} else {
+									vendor.services.push(service);
+								}
+								localStorage.setItem("vendor", JSON.stringify(vendor));
+								updatePage();
+							} else {
+								this.checked = !this.checked;
+								alert("Some error occured");
+							}
+						});
+					});
+				} else {
+					alert("Some error occured");
+				}
+			});
+		}
+
+		$(document).ready(function () {
+			updatePage();
+		})
+
+		function updatePage() {
+			var container = $('#container_vendor_name');
+			vendor = JSON.parse(localStorage.getItem("vendor"));
+			if (!vendor) {
+				window.location = "/";
+			}
+			var placeholder = `<div class="vendor-name" style="font-size: 3.5em; float: left;">${vendor.name}</div>
+					<button class="header-button" style="float: right; font-size: 1.3em;" onclick="logout()">Logout</button><b><br>`
+			container.html(placeholder);
+
+			var info_container = $('#container_information');
+			var info = `<div class=info>${vendor.mobile}</div> <br>
+					<div class=info>${vendor.address}</div> <br>
+					<div class=info>${vendor.email}</div>`;
+			info_container.html(info);
+
+			if (vendor.services) {
+				var service_container = $('#container_services');
+				var service = "";
+				for (i in vendor.services) {
+					var row =
+						`<div class="col-md-6 col-xs-6 first">
+						<div class="box">
+							<div style="background-image: url(${vendor.services[i].img_url}); background-size: cover;">
+								<div class="overlay">    
+									${vendor.services[i].name.toUpperCase()}
+								</div>
+							</div>
+						</div>
+					</div>`;
+					service += row;
+				}
+				service_container.html(service);
+			}
+			else if (vendors.length == 0) {
+				placeholder = `<div class="col-md-6 col-xs-6 first">
+                        <br>
+                        <p style="text-align: center;">No vendors</p>
+                        <br>
+                    </div>`;
+			}
+
+		}
+
+		function saveInformation() {
+			let name = $('#name').val();
+			let email = $('#email').val();
+			let address = $('#address').val();
+			request('PUT', '/vendors', {
+				id: vendor.id,
+				email: email,
+				name: name,
+				address: address
+			}).then((success) => {
+				if (success) {
+					vendor.name = name;
+					vendor.email = email;
+					vendor.address = address;
+					localStorage.setItem("vendor", JSON.stringify(vendor));
+					updatePage();
+					$('#editModal').modal('toggle');
+				} else {
+					$('#name').val(vendor.name);
+					$('#email').val(vendor.email);
+					$('#address').val(vendor.address);
+					alert("Some error occured");
+				}
+			});
+		}
+
+		function logout() {
+			localStorage.clear();
+			window.location = "/";
+		}
+	</script>
+
+
+</body>
+
+</html>

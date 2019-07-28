@@ -1,0 +1,435 @@
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a {
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: green;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter ul li {
+    margin: 10px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
+}
+
+#change {
+    transition: all 0.3s
+}
+
+#change:hover {
+    color: red;
+    height: 110%;
+}
+
+.parallax {
+    background-image: url('../images/background.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.firstPage1 {
+    position: relative;
+    height: auto;
+}
+
+.col-sm-6.firstPage1 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.head {
+    position: relative;
+    width: 100%;
+    font-weight: bold;
+    font-size: 46px;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
+.caption {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    font-size: 24px;
+    height: auto;
+    color: #60c593;
+    text-align: center;
+    padding-top: 20px;
+    letter-spacing: 1px;
+    padding-bottom: 100px;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #010101;
+    border-color: #80a1a6;
+}
+
+#change1 {
+    color: white;
+    transition: all 0.4s;
+}
+
+#change1:hover {
+    background: white;
+    color: black;
+}
+
+.lastTxt {
+    font-size: 24px;
+    padding-top: 30px;
+}
+
+#carouselExampleIndicators .carousel-item {
+    max-height: 520px;
+}
+
+body {
+    background: url(../images/aboutUsBackground.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 20px;
+}
+
+.wrapper {
+    position: absolute;
+    height: auto;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+
+/* service styles */
+
+.wedding {
+    height: 85%;
+    overflow: hidden;
+}
+
+.wedding>img {
+    width: 100%;
+    margin-top: -400px;
+    background: linear-gradient(transparent, gray)
+}
+
+.col-sm-12.firstPage {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.firstPage1 {
+    position: relative;
+    height: auto;
+    color: white;
+}
+
+.col-sm-6.firstPage1 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.text {
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    height: auto;
+    color: white;
+}
+
+.middlePageCentreLower {
+    height: auto;
+    position: relative;
+    border-style: solid;
+    padding-bottom: 40px;
+}
+
+.heading {
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Dancing Script', cursive;
+}
+
+nav.navbar.navbar-inverse {
+    background-color: rgba(34, 34, 34, 0.06);
+    border-color: rgba(34, 34, 34, 0.06);
+}
+
+.box {
+    position: relative;
+    text-align: center;
+    line-height: 200px;
+    font-size: 32px;
+    color: white;
+    font-family: 'Amaranth', serif;
+    border-style: solid;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.3);
+    height: 100%;
+}
+
+.box .overlay:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.secondMenuPanel {
+    margin: 50px 100px;
+}
+
+#alignUser {
+    text-align: center;
+}
+
+.vendors-container {
+    position: relative;
+    height: auto;
+    border-style: solid;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    color: white;
+}
+
+.phone {
+    margin-left: 20px;
+}
+
+.address {
+    margin-left: 20px;
+}
+
+.email {
+    margin-left: 20px;
+}
+
+.profile {
+    position: relative;
+    height: 80px;
+    width: 80px;
+}
+
+.vendor-image-name {
+    position: absolute !important;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.vendor-service-detail {
+    margin: 30px;
+    height: 400px;
+    font-size: 32px;
+    color: white;
+    font-family: 'Amaranth', serif;
+    border-style: solid;
+    text-align: center;
+}
+
+.view {
+    position: relative;
+    float: right;
+    width: 25%;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.info{
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #ffffffbf;
+	font-size:20px;
+    font-family: 'Dancing Script', cursive;
+ 	border-style: solid;
+ 	border-color: #A2A2A2;
+ 	width:70%;
+ 	height:auto;
+ 	 letter-spacing: 1px;
+}
+.profile {
+	position:relative;
+	height: 80px;
+	width: 80px;
+	float: left;
+}
+.header-button {
+	position: relative;
+    width:20%;
+    height: 40px;
+    font-size: 0.6em;
+	margin: 20px;
+	color:white;
+	background-color: black;
+	 letter-spacing: 1px;
+}
+
+.service {
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    height: auto;
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    border-style: solid;
+    border-color: #A2A2A2;
+    padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #ffffffbf;
+	width:70%;
+	font-weight: 10px;
+}
+
+.header{
+    position: relative;
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+     letter-spacing: 1px;
+}
+
+
+.profile-modal form {
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+  }
+  
+  .profile-modal h1 {
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+  
+  .profile-modal input[type="text"],
+  .profile-modal input[type="password"],
+  .profile-modal input[type="email"],
+  .profile-modal input[type="number"],
+  .profile-modal input[type="address"],
+  .profile-modal textarea,
+  .profile-modal select {
+    background: rgba(255,255,255,0.1);
+    font-size: 12px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 10px;
+  }
+  .profile-modal input[type="checkbox"] {
+    margin: 0 4px 8px 0;
+  }
+  
+  .profile-modal select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+  }
+  
+  
+  
+  .profile-modal fieldset {
+    margin-bottom: 30px;
+    border: none;
+  }
+  
+  .profile-modal legend {
+    font-size: 1.4em;
+    margin-top: 5px;
+  }
+  
+  
+  
+  .number {
+    background-color: black;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 100%;
+  }
+  
+  @media screen and (min-width: 480px) {
+  
+    .profile-modal form {
+      max-width: 480px;
+    }
+  
+  }
